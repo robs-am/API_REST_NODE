@@ -1,6 +1,6 @@
 function insere() {}
 
-function lista() {
+function lista(params, callback) {
   const objFake = [
     {
       id: 5,
@@ -11,6 +11,9 @@ function lista() {
       tags: ['cinema', 'trabalho'],
     },
   ];
+
+  const err = null;
+  callback(err, objFake);
 }
 function altera() {}
 function exclui() {}
