@@ -5,6 +5,10 @@ const pessoaRouter = express.Router();
 //pessoaRouter.use('/', (req, res, next) => res.send('Endpoint Pessoa'));
 pessoaRouter.get('/', listaPessoas);
 pessoaRouter.post('/', inserePessoas);
+pessoaRouter.put('/', inserePessoas);
+pessoaRouter.delete('/', inserePessoas);
+
+pessoaRouter.get('/{id}', inserePessoas); //pegar apenas uma unica pessoa
 
 function listaPessoas(req, res, next) {
   pessoaModel.lista({}, (err, lista) => {
