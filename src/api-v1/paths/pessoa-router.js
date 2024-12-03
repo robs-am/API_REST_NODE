@@ -26,5 +26,4 @@ function inserePessoas(req, res, next) {
   });
 }
 
-
 export default pessoaRouter;

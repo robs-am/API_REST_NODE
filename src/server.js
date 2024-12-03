@@ -1,10 +1,13 @@
 import http from 'http';
 import express from 'express';
+import bodyParser from 'body-parser';
 import apiRouter from './api-v1/api-router';
 
 const app = express();
 
-//app.get('/', (req, res, next) => res.send(''));
+app.use(bodyParser.json()); //associaa o json ao objeto req.body
+app.use(bodyParser.urlencoded({ extended: false })); //associa os parâmetros de URL e Body com formato urlEncoded ao objeto req.body
+
 app.get('/doc', (req, res, next) => res.send('Docs'));
 
 app.use('/api/v1', apiRouter);
